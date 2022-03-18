@@ -1,0 +1,27 @@
+{
+  "name": "record_keeper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamneeken/record_keeper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iamneeken/record_keeper/issues"
+  },
+  "homepage": "https://github.com/iamneeken/record_keeper#readme",
+  "devDependencies": {
+    "prisma": "^3.11.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^3.11.0",
+    "express": "^4.17.3"
+  }
+}
