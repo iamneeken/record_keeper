@@ -14,3 +14,9 @@
     - views: All html files
     - public: All public files (css, js, imgs, ..)
     - prisma: prisma schema files
+
+* **Initial project set up**
+    - Install all packages: `npm i`
+    - create `.env` file by using `.env-sample` file.
+    - Set up db: `npx prisma migrate dev`
+    - Seed db: `npx prisma db seed`
