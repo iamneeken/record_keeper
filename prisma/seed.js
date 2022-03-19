@@ -4,23 +4,33 @@ const prisma = new PrismaClient();
 
 const records = [
   {
+    id: 1,
     name: "Shirt",
     quantity: 10,
     price: 100,
   },
   {
+    id: 2,
     name: "Jacket",
     quantity: 20,
     price: 300,
+    additionalInfo: "nice jacket"
   }
 ];
 
 async function seed() {
   console.log(`Start seeding ...`);
   for (const record of records) {
-    await prisma.items.create({
-      data: record
-    })
+    let out = await prisma.items.findUnique({
+      where: {
+        id: record.id
+      }
+    });
+    if (!out) {
+      await prisma.items.create({
+        data: record
+      })
+    }
   }
   console.log("Seeding Finished.");
 }
