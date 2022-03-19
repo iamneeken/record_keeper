@@ -2,6 +2,7 @@ require('dotenv').config()
 const express = require("express");
 const nunjucks = require("nunjucks");
 const path = require("path");
+const records_router = require("./records");
 
 const app = express();
 
@@ -18,9 +19,7 @@ app.set("view engine", "njk"); // add extension of a file. ("njk", ".njk") both 
 app.use('/public', express.static(path.join(__dirname, '..', 'public'), {index: false}));
 
 
-app.get("/", (req, res) => {
-  res.render("index", {name: "bipin"});
-})
+app.use("/", records_router);
 
 const server = app.listen(process.env.port, () => {
   console.log(`Listening on url: localhost:${server.address().port}`);
