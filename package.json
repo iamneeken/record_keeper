@@ -2,8 +2,12 @@
   "name": "record_keeper",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
+    "start": "nodemon .",
+    "migrate:dev": "prisma migrate dev",
+    "seed": "prisma db seed",
+    "studio": "prisma studio",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,11 +21,17 @@
     "url": "https://github.com/iamneeken/record_keeper/issues"
   },
   "homepage": "https://github.com/iamneeken/record_keeper#readme",
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  },
   "devDependencies": {
+    "nodemon": "^2.0.15",
     "prisma": "^3.11.0"
   },
   "dependencies": {
     "@prisma/client": "^3.11.0",
-    "express": "^4.17.3"
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "nunjucks": "^3.2.3"
   }
 }
