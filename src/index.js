@@ -13,10 +13,10 @@ nunjucks.configure(path.join(__dirname, '..', 'views'), {
 })
 
 app.use(express.json());
-app.use(express.urlencoded({extended: false}))
+app.use(express.urlencoded({ extended: false }))
 
 app.set("view engine", "njk"); // add extension of a file. ("njk", ".njk") both are fine
-app.use('/public', express.static(path.join(__dirname, '..', 'public'), {index: false}));
+app.use('/public', express.static(path.join(__dirname, '..', 'public'), { index: false }));
 
 
 app.use("/", records_router);
